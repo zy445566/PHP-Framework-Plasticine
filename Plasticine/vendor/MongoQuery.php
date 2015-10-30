@@ -62,7 +62,7 @@ class MongoQuery{
 	public function update($value=null,$newvalue=null)
 	{	
 		if( empty($value) || empty($newvalue) ){return false;}
-		$newdata = array('$set' => $newvalue);
+		//$newdata = array('$set' => $newvalue);
 		$this->collection->update($value,$newvalue);
 	}
  	/*
