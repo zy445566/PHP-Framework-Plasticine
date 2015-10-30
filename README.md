@@ -1,40 +1,39 @@
-#Welcome to Plasticine!
-#The PHP framework only supports Linux,
-Our purpose: high scalability, flexible,minimalism
+#Welcome to Plasticine!<br/>
+##The PHP framework only supports Linux,<br/>
+##Our purpose: high scalability, flexible,minimalism<br/>
 
 
 #First
-Give full rights to directory
-For example:chmod -R 777 /Plasticine
-Need to open rewrite
-Make public directory to become DocumentRoot(apache) or root(nginx)
-##Apache:
+Give full rights to directory<br/>
+For example:chmod -R 777 /Plasticine<br/>
+Need to open rewrite<br/>
+Make public directory to become DocumentRoot(apache) or root(nginx)<br/>
+##Apache:<br/>
 
-###Options +FollowSymLinks
-###RewriteEngine On
+Options +FollowSymLinks<br/>
+RewriteEngine On<br/>
 
-###RewriteCond %{REQUEST_FILENAME} !-d
-###RewriteCond %{REQUEST_FILENAME} !-f
-###RewriteRule ^ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d<br/>
+RewriteCond %{REQUEST_FILENAME} !-f<br/>
+RewriteRule ^ index.php [L]<br/>
 
-##Nginx:
-###location / {
-###    try_files $uri $uri/ /index.php?$query_string;
-###}
-
+##Nginx:<br/>
+location / {<br/>
+    try_files $uri $uri/ /index.php?$query_string;<br/>
+}<br/>
 
 #Second
-Default support:Mongodb
-So you have to open the PHP extension:mongodb.so
-http://pecl.php.net/package/mongo
+Default support:Mongodb<br/>
+So you have to open the PHP extension:mongodb.so<br/>
+http://pecl.php.net/package/mongo<br/>
 
 #Then
-You have to configure database.conf in the conf directory.
-You can new MongoQuery in controller and module and so on
+You have to configure database.conf in the conf directory.<br/>
+You can new MongoQuery in controller and module and so on<br/>
 
 #Last
-test:
-http://127.0.0.1/?name=yourname
-if show:Welcome to Plasticine!yourname
-then OK!but maybe your IP is not 127.0.0.1
+##test:
+http://127.0.0.1/?name=yourname<br/>
+if show:Welcome to Plasticine!yourname<br/>
+then OK!but maybe your IP is not 127.0.0.1<br/>
 
