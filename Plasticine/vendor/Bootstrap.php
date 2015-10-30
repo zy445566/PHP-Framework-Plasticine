@@ -47,9 +47,9 @@ class Bootstrap{
 	 */
 	public function autoclass()
 	{
-		$this->setclassdir('vendor');
-		$this->setclassdir('controller');
-		$this->setclassdir('module');
+		foreach ($this->confs["autoload"] as $library_key => $library_name) {
+			$this->setclassdir($library_name);
+		}
 	}
 	/**
 	 * [getconf description]
@@ -81,8 +81,8 @@ class Bootstrap{
 	 */
 	public function run()
     {	
- 		$this->autoclass();
     	$this->confs=$this->getconf('conf');
+    	$this->autoclass();
     	$rt=new Router($this->confs['router']);
     	$rt->getmethed();
 		$rt->torouter();
