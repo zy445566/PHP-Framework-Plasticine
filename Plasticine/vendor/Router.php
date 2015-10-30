@@ -6,7 +6,7 @@ class Router{
 	private $methed;
 	private $rl=2;//用于路由层次统计
 	private $confs;
-	public function __construct($confs){
+	public function __construct(){
 		$this->confs=Myconf::getconf('router');
 	}
 	private function routerlevel($router)
