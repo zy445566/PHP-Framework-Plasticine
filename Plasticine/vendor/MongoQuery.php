@@ -56,7 +56,7 @@ class MongoQuery{
 		$this->collection->remove($value, array("justOne" => true));
 	}
 	/*
-	$value=array("user" => "root")
+	$value=array("username" => "root")
 	$newvalue=array("typename"=>"超级管理员");//这是要修改或要新增的值
 	*/
 	public function update($value=null,$newvalue=null)

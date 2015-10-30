@@ -81,6 +81,7 @@ class Bootstrap{
 	 */
 	public function run()
     {	
+    	session_start();
     	$this->confs=$this->getconf('conf');
     	$this->autoclass();
     	Myconf::setconf($this->confs);
