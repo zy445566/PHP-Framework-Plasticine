@@ -1,5 +1,5 @@
-Welcome to Plasticine!
-The PHP framework only supports Linux,
+#Welcome to Plasticine!
+#The PHP framework only supports Linux,
 Our purpose: small size, high scalability, flexible, easy
 
 
