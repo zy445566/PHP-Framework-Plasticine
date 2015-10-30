@@ -8,8 +8,6 @@ $bootstrap = new Bootstrap($mydir);
 
 $bootstrap->run();
 
-$confs=$bootstrap->confs;
-
-$router=new Router($confs['router']);
+$router=new Router(Myconf::getconf('router'));
 
 $router->torouter();

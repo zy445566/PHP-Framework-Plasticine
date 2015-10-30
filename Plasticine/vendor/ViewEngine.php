@@ -8,9 +8,7 @@ class ViewEngine{
 	private $left_math;
 	private $arr_var=array();
 	public function __construct(){
-		$confstr=file_get_contents(dirname($_SERVER['DOCUMENT_ROOT']).'/conf/view.conf');
-		$conf=json_decode($confstr,true);
-		$conf=$conf['view'];
+		$conf=Myconf::getconf('view');
 		$this->path=dirname($_SERVER['DOCUMENT_ROOT']).'/'.$conf['path'];
 		$this->compiled=dirname($_SERVER['DOCUMENT_ROOT']).'/'.$conf['compiled'];
 		$this->right_math=$conf['right_math'];

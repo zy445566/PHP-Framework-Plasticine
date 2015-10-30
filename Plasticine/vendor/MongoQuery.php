@@ -9,8 +9,7 @@ class MongoQuery{
 	public function collect($collect=null)
 	{	
 		if(empty($collect)){return false;}
-		$confstr=file_get_contents(dirname($_SERVER['DOCUMENT_ROOT']).'/conf/database.conf');
-		$conf=json_decode($confstr,true);
+		$conf=Myconf::getconf('database');
 		$constr="mongodb://";
 		$conf=$conf['database']['Mongodb'];
 		if(!empty($conf['user']) and !empty($conf['password'])){

@@ -83,6 +83,7 @@ class Bootstrap{
     {	
     	$this->confs=$this->getconf('conf');
     	$this->autoclass();
+    	Myconf::setconf($this->confs);
     }
 
 	public function __destruct(){
