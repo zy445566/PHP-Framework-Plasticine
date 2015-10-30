@@ -44,6 +44,7 @@ class ViewEngine{
 				$this->compile($value);
 			}
 		}
+		clearstatcache();
 		if(!file_exists($compile_file) || filemtime($compile_file)< filemtime($view_file)){
 			$repContent=$this->replaceview($content);
 			file_put_contents($compile_file,$repContent);
@@ -62,7 +63,6 @@ class ViewEngine{
 		$this->arr_var=$value;
 	}
 	public function __destruct(){
-		//clearstatcache();
 		if(!$this->compile($this->view)){
 			return false;
 		}
