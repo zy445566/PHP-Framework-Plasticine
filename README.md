@@ -8,19 +8,19 @@ Give full rights to directory
 For example:chmod -R 777 /Plasticine
 Need to open rewrite
 Make public directory to become DocumentRoot(apache) or root(nginx)
-Apache:
+##Apache:
 
-Options +FollowSymLinks
-RewriteEngine On
+###Options +FollowSymLinks
+###RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]
+###RewriteCond %{REQUEST_FILENAME} !-d
+###RewriteCond %{REQUEST_FILENAME} !-f
+###RewriteRule ^ index.php [L]
 
-Nginx:
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
+##Nginx:
+###location / {
+###    try_files $uri $uri/ /index.php?$query_string;
+###}
 
 
 #Second
