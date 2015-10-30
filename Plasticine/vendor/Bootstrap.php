@@ -83,9 +83,6 @@ class Bootstrap{
     {	
     	$this->confs=$this->getconf('conf');
     	$this->autoclass();
-    	$rt=new Router($this->confs['router']);
-    	$rt->getmethed();
-		$rt->torouter();
     }
 
 	public function __destruct(){

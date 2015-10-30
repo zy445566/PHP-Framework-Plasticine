@@ -27,16 +27,6 @@ class Router{
 		}
 		return $methed;
 	}
-	/**
-	 * [getmethed description]
-	 * @return [type] [description]
-	 */
-	public function getmethed(){
-		$router=$this->routerlevel($this->confs['controller']);
-		$this->methed=$router;
-		// echo $this->rl;
-		// var_dump($router);
-	}
 	private function router_undefined($methed="")
 	{
 		if($methed!='GET' and $methed!='POST'){
@@ -52,7 +42,9 @@ class Router{
 		$controller->$controller_funname();
 	}
 	public function torouter()
-	{
+	{	
+		$router=$this->routerlevel($this->confs['controller']);
+		$this->methed=$router;
 		preg_match_all( '/\w+/i', $_SERVER['REQUEST_URI'] , $myrouter);
 		//var_dump($myrouter[0]);
 		if(empty($myrouter[0][0])){

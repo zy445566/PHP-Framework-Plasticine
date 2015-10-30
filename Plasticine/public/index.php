@@ -7,3 +7,9 @@ include_once($mydir.'/vendor/Bootstrap.php');
 $bootstrap = new Bootstrap($mydir);
 
 $bootstrap->run();
+
+$confs=$bootstrap->confs;
+
+$router=new Router($confs['router']);
+
+$router->torouter();
