@@ -1,17 +1,14 @@
 <?php
 class MongoQuery{
 	private $db;
+	private $m;
 	private $collection;
 	private $cursor;
-	/*
-	用于连接mongodb和选择收集器（即关系型数据库的表）
-	*/
-	public function collect($collect=null)
-	{	
-		if(empty($collect)){return false;}
+
+	public function __construct(){
 		$conf=Myconf::getconf('database');
 		$constr="mongodb://";
-		$conf=$conf['database']['Mongodb'];
+		$conf=$conf['Mongodb'];
 		if(!empty($conf['user']) and !empty($conf['password'])){
 			$constr.=$conf['user'].':'.$conf['password'].'@';
 		}
@@ -23,8 +20,15 @@ class MongoQuery{
 		//localhost:27017
 		$this->db=$conf['db'];
 		//echo $constr.'<br />';
-		$m = new MongoClient($constr); // 连接
-		$this->collection = $m->selectCollection($this->db, $collect);
+		$this->m = new MongoClient($constr); // 连接
+	}
+	/*
+	用于连接mongodb和选择收集器（即关系型数据库的表）
+	*/
+	public function collect($collect=null)
+	{	
+		if(empty($collect)){return false;}	
+		$this->collection = $this->m->selectCollection($this->db, $collect);
 		return $this;
 	}
 
