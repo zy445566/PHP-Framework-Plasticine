@@ -59,11 +59,14 @@ class ViewEngine{
 	public function take($value)
 	{	
 		$this->arr_var=$value;
+		return $this;
 	}
-	public function __destruct(){
+	public function show(){
 		if(!$this->compile($this->view)){
 			return false;
 		}
-		include_once ($this->compile_file);
+		ob_start();
+		include ($this->compile_file);
+		return ob_get_clean();
 	}
 }

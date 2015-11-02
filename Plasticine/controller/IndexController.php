@@ -5,11 +5,11 @@ class IndexController{
 		if(!empty($_GET['name'])){
 			$ve=new ViewEngine();
 			$content = array('name' => $_GET['name'],'title'=>'Welcome to Plasticine');
-			$ve->view('index')->take($content);
+			echo $ve->view('index')->take($content)->show();
 		}else{
 			$ve=new ViewEngine();
 			$content = array('name' => 'Everyone!','title'=>'Welcome to Plasticine');
-			$ve->view('index')->take($content);
+			echo $ve->view('index')->take($content)->show();
 		}
 	}
 }
