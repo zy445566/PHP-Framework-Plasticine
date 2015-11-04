@@ -53,7 +53,7 @@ class MongoQuery{
 	{	
 		if( empty($value) ){return false;}
 		//var_dump($value);
-		$this->collection->remove($value, array("justOne" => true));
+		$this->collection->remove($value, array("justOne" => false));
 	}
 	/*
 	$value=array("username" => "root")
